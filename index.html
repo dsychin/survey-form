@@ -14,15 +14,16 @@
         body {
             margin: 0;
             font-family: 'Lato', sans-serif;
+            background-color: #eee;
         }
 
         .container {
             display: flex;
             flex-direction: column;
-        }
-
-        form {
             max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 10px 40px;
         }
 
         .form-group {
@@ -30,11 +31,33 @@
             flex-direction: column;
             padding: 10px 20px;
         }
+        
+        .textbox {
+            padding: 8px;
+        }
 
+        .textbox:focus {
+            border: solid 1px #e47900;
+        }
+
+        .textbox:hover {
+            border: solid 1px #ff9a26;
+        }
+
+        input,
+        select {
+            margin-top: 4px;
+        }
+
+        textarea {
+            font-family: 'Lato', sans-serif;
+        }
+        
         input[type="submit"] {
+            transition: all 0.4s;
             background-color: white;
-            border: orange 3px solid;
-            color: orange;
+            border: #e47900 3px solid;
+            color: #e47900;
             font-weight: 700;
             font-size: 24px;
             cursor: pointer;
@@ -43,7 +66,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: orange;
+            background-color: #e47900;
             color: white;
         }
     </style>
@@ -62,26 +85,29 @@
         <form id="survey-form">
             <div class="form-group">
                 <label id="name-label" for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="eg. John Doe" required>
+                <input type="text" id="name" name="name" placeholder="eg. John Doe" class="textbox" required>
             </div>
             <div class="form-group">
                 <label id="email-label" for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="e.g. user@example.org" required>
+                <input type="email" id="email" name="email" placeholder="e.g. user@example.org" class="textbox"
+                    required>
             </div>
             <div class="form-group">
                 <label id="number-label" for="number">Age</label>
-                <input type="number" id="number" name="number" min="0" max="120" placeholder="e.g. 23">
+                <input type="number" id="number" name="number" min="0" max="120" class="textbox" placeholder="e.g. 23">
             </div>
             <div class="form-group">
                 <label for="radio" id="radio-label">Gender</label>
-                <input type="radio" id="radioOption1" name="radio" value="1">
-                <label for="radioOption1">Male</label>
-                <input type="radio" id="radioOption2" name="radio" value="2">
-                <label for="radioOption2">Female</label>
+                <div class="gender-group">
+                    <input type="radio" id="radioOption1" name="radio" value="1">
+                    <label for="radioOption1">Male</label>
+                    <input type="radio" id="radioOption2" name="radio" value="2">
+                    <label for="radioOption2">Female</label>
+                </div>
             </div>
             <div class="form-group">
                 <label for="dropdown" id="dropdown-label">How often do you exercise during a week?</label>
-                <select name="dropdown" id="dropdown">
+                <select name="dropdown" id="dropdown" class="textbox">
                     <option value="0">Select an option</option>
                     <option value="1">None</option>
                     <option value="2">Once per week</option>
@@ -108,7 +134,7 @@
             </div>
             <div class="form-group">
                 <label for="comments">Additional Comments</label>
-                <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                <textarea name="comments" id="comments" cols="30" rows="10" class="textbox" placeholder="Enter any additional comments"></textarea>
             </div>
             <div class="form-group">
                 <input type="submit" id="submit" value="submit">
