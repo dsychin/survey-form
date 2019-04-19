@@ -2,6 +2,8 @@
 
 This is a front end project for the freeCodeCamp course.
 
+[Live Demo](https://survey-form.desmond.app/)
+
 ## Prerequisites
 1. Modern web browser
 
